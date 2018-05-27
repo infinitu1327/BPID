@@ -27,7 +27,7 @@ namespace DES
             var block = sequence as T[] ?? sequence.ToArray();
 
             if (count > block.Length) throw new Exception();
-            return block.Skip(block.Length - count).Concat(block.Take(block.Count() - count));
+            return block.Skip(block.Length - count).Concat(block.Take(block.Length - count));
         }
 
         public static IEnumerable<bool> FixLength(this IEnumerable<bool> block, int size)
@@ -48,7 +48,7 @@ namespace DES
             return list;
         }
 
-        public static T[] Reshuffle<T>(this IEnumerable<T> block, IEnumerable<int> table)
+        public static T[] Reshuffle<T>(this IEnumerable<T> block, IEnumerable<byte> table)
         {
             var pushedBlock = new[] {default(T)}.Concat(block);
             return table.Select(index => pushedBlock.ElementAt(index)).ToArray();

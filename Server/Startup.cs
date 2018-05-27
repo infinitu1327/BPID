@@ -6,7 +6,7 @@ using Server.Services;
 
 namespace Server
 {
-    public class Startup
+    public abstract class Startup
     {
         public Startup(IConfiguration configuration)
         {

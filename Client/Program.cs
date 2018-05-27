@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Client
 {
-    internal class Program
+    internal static class Program
     {
         private static async Task Main()
         {

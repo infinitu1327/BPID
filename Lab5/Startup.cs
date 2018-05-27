@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Lab5
 {
-    public class Startup
+    public abstract class Startup
     {
         public Startup(IConfiguration configuration)
         {
