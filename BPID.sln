@@ -7,6 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pz1", "Pz1\Pz1.csproj", "{A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VernamEncryption", "VernamEncryption\VernamEncryption.csproj", "{95013381-4FDE-48C3-8B71-C638D717BB72}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab1", "Lab1\Lab1.csproj", "{FC36D00E-A076-4B20-B9A0-09F093DED297}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3C04D161-C592-4877-8FAA-DEFF513BDE71} = {3C04D161-C592-4877-8FAA-DEFF513BDE71}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DES", "DES\DES.csproj", "{3C04D161-C592-4877-8FAA-DEFF513BDE71}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A968EDFC-BDD3-42C8-886A-6A166987A662}"
 	ProjectSection(SolutionItems) = preProject
 		README.MD = README.MD
@@ -26,6 +33,14 @@ Global
 		{95013381-4FDE-48C3-8B71-C638D717BB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95013381-4FDE-48C3-8B71-C638D717BB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95013381-4FDE-48C3-8B71-C638D717BB72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC36D00E-A076-4B20-B9A0-09F093DED297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC36D00E-A076-4B20-B9A0-09F093DED297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC36D00E-A076-4B20-B9A0-09F093DED297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC36D00E-A076-4B20-B9A0-09F093DED297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C04D161-C592-4877-8FAA-DEFF513BDE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C04D161-C592-4877-8FAA-DEFF513BDE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C04D161-C592-4877-8FAA-DEFF513BDE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C04D161-C592-4877-8FAA-DEFF513BDE71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
