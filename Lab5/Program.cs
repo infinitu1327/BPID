@@ -7,14 +7,10 @@ namespace Lab5
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
-        }
-
-        private static IWebHost BuildWebHost(string[] args)
-        {
-            return WebHost.CreateDefaultBuilder(args)
+            WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .Build();
+                .Build()
+                .Run();
         }
     }
 }

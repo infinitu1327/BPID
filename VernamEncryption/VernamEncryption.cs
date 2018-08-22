@@ -24,7 +24,7 @@ namespace VernamEncryption
             keyInNumbers = NormalizeKeyLength(keyInNumbers, text.Length);
             text = NormalizeTextLength(text, keyInNumbers.Length);
 
-            var resultInNumbers = Substraction(text, keyInNumbers);
+            var resultInNumbers = Subtraction(text, keyInNumbers);
 
             return NumbersToText(resultInNumbers);
         }
@@ -44,7 +44,7 @@ namespace VernamEncryption
             return sb.ToString();
         }
 
-        private static string Substraction(string text, string key)
+        private static string Subtraction(string text, string key)
         {
             var sb = new StringBuilder();
 
