@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using Server.Services;
+﻿using Microsoft.AspNetCore.Mvc;
+using Server.Services.Interfaces;
 
 namespace Server.Controllers
 {
     [Route("api/[controller]")]
-    public class RSAController : Controller
+    [ApiController]
+    public class RSAController : ControllerBase
     {
         private readonly IRSAService _rsaService;
 
@@ -14,30 +14,17 @@ namespace Server.Controllers
             _rsaService = rsaService;
         }
 
-        // GET api/values/id
-        [HttpGet("{id}")]
-        public IActionResult Get([FromHeader] int? id)
+        [HttpGet]
+        public IActionResult GetPublicKeys()
         {
-            if (!id.HasValue) return new BadRequestResult();
-
-            return new OkObjectResult(_rsaService.GetPublicKeys(id.Value));
+            var keys = _rsaService.GetPublicKeys(HttpContext.Connection.Id);
+            return Ok(keys);
         }
 
-        // POST api/values/id
-        [HttpPost("{id}")]
-        public IActionResult Post([FromForm] string encryptedText, int? id)
+        [HttpPost]
+        public IActionResult Decrypt([FromForm] string encryptedText)
         {
-            if (!id.HasValue || encryptedText == null) return new BadRequestResult();
-
-            Console.WriteLine("Encrypted text (base 64):");
-            Console.WriteLine(encryptedText);
-
-            var decryptedText = _rsaService.GetDecryptedText(encryptedText, id.Value);
-
-            Console.WriteLine("Decrypted text:");
-            Console.WriteLine(decryptedText);
-
-            return new OkObjectResult(decryptedText);
+            return Ok(_rsaService.GetDecryptedText(encryptedText, HttpContext.Connection.Id));
         }
     }
 }

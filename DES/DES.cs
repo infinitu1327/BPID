@@ -93,11 +93,9 @@ namespace DES
 
             for (var i = 1; i <= 16; i++)
             {
-                leftKeyHalf = leftKeyHalf
-                    .ShiftLeft(Tables.KeyHalf[i - 1]).ToArray();
+                leftKeyHalf = leftKeyHalf.ShiftLeft(Tables.KeyHalf[i - 1]).ToArray();
 
-                rightKeyHalf = rightKeyHalf
-                    .ShiftLeft(Tables.KeyHalf[i - 1]).ToArray();
+                rightKeyHalf = rightKeyHalf.ShiftLeft(Tables.KeyHalf[i - 1]).ToArray();
 
                 var roundKey = leftKeyHalf.Concat(rightKeyHalf).Reshuffle(Tables.FinalKey);
 
@@ -154,8 +152,7 @@ namespace DES
             var row = Convert.ToInt16(string.Concat(FromBool(block[0]), FromBool(block[5])), 2);
             var col = Convert.ToInt16(string.Concat(block.Skip(1).Take(4).Select(FromBool)), 2);
 
-            var res = Convert.ToString(sTable.ElementAt(row * 16 + col), 2)
-                .Select(ToBool);
+            var res = Convert.ToString(sTable.ElementAt(row * 16 + col), 2).Select(ToBool);
 
             return res.FixLength(4);
         }
